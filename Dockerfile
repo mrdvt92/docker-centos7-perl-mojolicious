@@ -16,13 +16,15 @@ RUN yum -y install epel-release
 
 RUN yum -y update
 
-#Install Mojolicious from EPEL
-RUN yum -y install perl-Mojolicious #install dependances from yum
+#Install Mojolicious dependancies from yum
+RUN yum -y install perl-Mojolicious
 
 RUN yum -y erase perl-Mojolicious
 
+#Install Mojolicious dependancies
 RUN yum -y install gcc /usr/bin/cpanm
 
+#Install Mojolicious latest version from CPAN
 RUN cpanm Mojolicious
 
 #Install App

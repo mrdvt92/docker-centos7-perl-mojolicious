@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use FindBin;
+BEGIN { unshift @INC, "$FindBin::Bin/../lib" }
+use Mojo::Server;
+use Mojo::Log;
+
+my $app = Mojo::Server->new->build_app('MyApp');
+my $log = Mojo::Log->new(path => '/var/log/mojo.log', level => 'trace');
+$app->log($log);
+$app->start;

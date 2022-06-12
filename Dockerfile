@@ -32,7 +32,7 @@ COPY my_app.sh /my_app.sh
 #From: https://hub.docker.com/_/centos but I do not know what this statement does
 VOLUME [ "/sys/fs/cgroup" ]
 
-#Expose web server on port 5000 - port configured in my_app/my_app.conf
+#Expose web server on port 8080 - default port but can be configured in my_app/my_app.conf
 EXPOSE 8080
 
 #Command to start Systemd

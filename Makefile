@@ -1,4 +1,4 @@
-IMAGE_NAME=local/centos7-perl-mojolicious
+IMAGE_NAME=local/almalinux9-perl-mojolicious
 CONTAINER_NAME=mojo
 MOJO_LOG=/var/log/mojo.log
 

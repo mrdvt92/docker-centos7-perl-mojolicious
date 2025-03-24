@@ -1,4 +1,4 @@
-FROM centos:7
+FROM almalinux:9
 
 RUN yum -y install epel-release
 RUN yum -y update
@@ -6,14 +6,8 @@ RUN yum -y update
 #Install Mojolicious dependancies from yum
 RUN yum -y install perl-Mojolicious
 
-#Erase supported Mojolicious version as we will install the newest version from CPAN
-RUN yum -y erase perl-Mojolicious
-
-#Install Mojolicious CPAN install and build dependancies
-RUN yum -y install /usr/bin/cpanm gcc 'perl(Test::More)'
-
 #Install Mojolicious latest version from CPAN
-RUN cpanm Mojolicious
+#RUN cpanm Mojolicious
 
 #Install App
 COPY my_app /my_app
